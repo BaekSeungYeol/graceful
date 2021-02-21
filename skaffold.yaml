@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta10
+kind: Config
+metadata:
+  name: example-graceful
+build:
+  artifacts:
+  - image: example-graceful
+    context: .
+    docker: {}
+deploy:
+  kustomize:
+    paths:
+    - kubernetes-manifests/base
